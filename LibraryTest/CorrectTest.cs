@@ -9,34 +9,25 @@ namespace LibraryTest
     class CorrectTest
     {
         [Test]
-        public void AreaCircle()
+        public void CorrectAreaTriangle()
         {
-            double area;
-            area = Area.AreaCalculation(8);
-            Assert.AreEqual(200,9, area);
+            Triangle triangle = new Triangle("Треугольник",3,4,5);
+            Assert.AreEqual(6, triangle.Area());
         }
 
         [Test]
-        public void AreaЕriangle()
+        public void CorrectIsRightAngledTriangle()
         {
-            double area;
-            area = Area.AreaCalculation(3, 4, 5);
-            Assert.AreEqual(6, area);
+            Triangle triangle = new Triangle("Треугольник", 3, 4, 5);
+            Assert.AreEqual(true, triangle.IsRightAngledTriangle());
         }
 
         [Test]
-        public void IsRightAngledTriangle()
+        public void CorrectAreaCircle()
         {
-            bool isRightAngledTriangle = Area.IsRightAngledTriangle(3, 4, 5);
-            Assert.AreEqual(true, isRightAngledTriangle);
+            var circle = new Circle("Круг",2);
+            Assert.AreEqual(12.566370614359172, circle.Area());
         }
-        [Test]
-        public void IsRightAngledTriangleV2()
-        {
-            bool isRightAngledTriangle = Area.IsRightAngledTriangle(3, 10, 5);
-            Assert.AreEqual(false, isRightAngledTriangle);
-        }
-
 
     }
 }
